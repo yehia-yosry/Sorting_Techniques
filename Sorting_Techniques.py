@@ -39,8 +39,8 @@ def rand_arr(length):
     arr = []
     for i in range(0, int(length)):
         arr.insert(0, random.randint(0, 12000))
-    print("Random Array Generated: ", "\n",  arr)
-    return arr
+    print("Random Array:     ",  arr)
+    return arr 
         
   
 arr_length = input("Enter Array Length To Test Sorting Algorithms On: ")
@@ -48,20 +48,20 @@ arr = rand_arr(arr_length)
 
 # Testing Bubble Sort
 begin1 = time.time()
-print(bubble_sort(arr))
+print("Bubble Sorted:    ", bubble_sort(arr),)
 end1 = time.time()
         
 # Testing Insertion Sort
 begin2 = time.time()
-print(insertion_sort(arr))
+print("Insertion Sorted: ", insertion_sort(arr))
 end2 = time.time()
 
 # Testing Selection Sort
 begin3 = time.time()
-print(selection_sort(arr))
+print("Selection Sorted: ", selection_sort(arr))
 end3 = time.time()
 
 
-print("Bubble Sort: " ,  end1 - begin1)
-print("Insertion Sort: " ,  end2 - begin2)
-print("Selection Sort: " ,  end3 - begin3)
+print("Bubble Sort Time (us): " ,  (end1 - begin1) * 1000)
+print("Insertion Sort Time (us): " ,  (end2 - begin2) * 1000)
+print("Selection Sort Time (us): " ,  (end3 - begin3) * 1000)
