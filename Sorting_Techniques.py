@@ -1,4 +1,5 @@
 import time
+import random
 
 def bubble_sort(arr):
     for i in range(0, len(arr)):
@@ -32,23 +33,35 @@ def selection_sort(arr):
                 min_index = j
         arr[i], arr[min_index] = arr[min_index], arr[i]
     return arr
-    
+
+# Random Array Generating Function
+def rand_arr(length):
+    arr = []
+    for i in range(0, int(length)):
+        arr.insert(0, random.randint(0, 12000))
+    print("Random Array Generated: ", "\n",  arr)
+    return arr
+        
+  
+arr_length = input("Enter Array Length To Test Sorting Algorithms On: ")
+arr = rand_arr(arr_length)
 
 # Testing Bubble Sort
-begin = time.time()
-print(bubble_sort([5, 4, 3, 2, 1]))
-end = time.time()
-print("Bubble Sort: " ,  end - begin)
+begin1 = time.time()
+print(bubble_sort(arr))
+end1 = time.time()
         
 # Testing Insertion Sort
-begin = time.time()
-print(insertion_sort([5, 4, 3, 2, 1]))
-end = time.time()
-print("Insertion Sort: " ,  end - begin)
-
+begin2 = time.time()
+print(insertion_sort(arr))
+end2 = time.time()
 
 # Testing Selection Sort
-begin = time.time()
-print(selection_sort([5, 4, 3, 2, 1]))
-end = time.time()
-print("Selection Sort: " ,  end - begin)
+begin3 = time.time()
+print(selection_sort(arr))
+end3 = time.time()
+
+
+print("Bubble Sort: " ,  end1 - begin1)
+print("Insertion Sort: " ,  end2 - begin2)
+print("Selection Sort: " ,  end3 - begin3)
