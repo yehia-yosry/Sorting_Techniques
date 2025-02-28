@@ -1,3 +1,4 @@
 # Sorting_Techniques
-Implementing O(n^2) Sorting Techniques Including Bubble Sort, Insertion Sort, and Selection Sort. 
-A Graph That Illustrates The Time Difference Based On Random Generated Array Inputs For The Three Algoritms Is Included
+Implementing bubble sort, insertion sort, and selection sort. 
+Using matplotlib library, a graph representing the time taken based on input size was generated.
+Random number generating function was used as an input for unsorted arrays.
