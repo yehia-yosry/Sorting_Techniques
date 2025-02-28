@@ -1,49 +1,9 @@
-import time
+
 import random
-import numpy as np
-import matplotlib.pyplot as plt # type: ignore
-
-
-def bubble_sort(arr):
-    start = time.perf_counter()
-    for i in range(0, len(arr)):
-        is_sorted = True
-        for j in range(0, len(arr) - 1 - i):
-            if (arr[j] > arr[j+1]):
-                is_sorted = False
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-        if is_sorted == True:
-            break
-    end = time.perf_counter()
-    return arr, end - start
-
-
-def insertion_sort(arr):
-    start = time.perf_counter()
-    for i in range(1, len(arr), 1):
-        value = arr[i]
-        pos = i
-        for j in range(i-1, -1, -1):
-            if arr[j] > value:
-                arr[j+1] = arr[j]
-                pos = j
-            else:
-                break
-        arr[pos] = value
-    end = time.perf_counter()
-    return arr, end - start
-
-
-def selection_sort(arr):
-    start = time.perf_counter()
-    for i in range(0, len(arr)):
-        min_index = i
-        for j in range(i+1, len(arr)):
-            if arr[j] < arr[min_index]:
-                min_index = j
-        arr[i], arr[min_index] = arr[min_index], arr[i]
-    end = time.perf_counter()
-    return arr, end - start
+import matplotlib.pyplot as plt  # type: ignore
+import bubble_sort as bs  # type: ignore
+import insertion_sort as ins  # type: ignore
+import selection_sort as ss  # type: ignore
 
 
 def random_array(length):
@@ -59,13 +19,13 @@ def time_complexity(input_sizes):
     time_selection = []
     for i in range(0, len(input_sizes)):
         arr = random_array(input_sizes[i])
-        time_bubble.append(bubble_sort(arr)[1])
-        time_insertion.append(insertion_sort(arr)[1])
-        time_selection.append(selection_sort(arr)[1])
+        time_bubble.append(bs.bubble_sort(arr)[1])
+        time_insertion.append(ins.insertion_sort(arr)[1])
+        time_selection.append(ss.selection_sort(arr)[1])
     return time_bubble, time_insertion, time_selection
 
 
-input_sizes = [0, 100, 200, 300, 500]
+input_sizes = [0, 2500, 5000, 7500, 10000]
 time_ = time_complexity(input_sizes)
 bubble_sort_time = time_[0]
 insertion_sort_time = time_[1]
