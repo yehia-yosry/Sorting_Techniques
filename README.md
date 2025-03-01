@@ -5,6 +5,6 @@ Random number generating function was used as an input for unsorted arrays.
 
 
 ![complexity_graph](https://github.com/user-attachments/assets/fef30521-5dca-43cd-85ef-d18ee49affc6)
+![AlgorithmRuntime](https://github.com/user-attachments/assets/7e875ff2-c862-433c-a976-703545ef4da8)
 
-![Runtime Algorithm Graph](https://github.com/user-attachments/assets/a796df9e-0931-46a1-9273-58fb8a6856a1)
 
