@@ -70,14 +70,17 @@ def entireAlgorithm(runs):
     elementNumbers = [0] * runs
     for i in range(runs):
         arrayElements = random.randint(1, 1000)
-        elementNumbers[i] = arrayElements
-        array = generateArray(arrayElements)
-        runResult = bubbleSort(array)
-        resultBubble[i] = runResult[1]
-        runResult = insertionSort(array)
-        resultInsertion[i] = runResult[1]
-        runResult = selectionSort(array)
-        resultSelection[i] = runResult[1]
+        if arrayElements in elementNumbers:
+            i -= 1;
+        else:
+            elementNumbers[i] = arrayElements
+            array = generateArray(arrayElements)
+            runResult = bubbleSort(array)
+            resultBubble[i] = runResult[1]
+            runResult = insertionSort(array)
+            resultInsertion[i] = runResult[1]
+            runResult = selectionSort(array)
+            resultSelection[i] = runResult[1]
     return elementNumbers, resultBubble, resultInsertion, resultSelection
 
 runResult = entireAlgorithm(500)
@@ -93,7 +96,7 @@ chart = ScatterChart()
 chart.x_axis.title = 'Input Size (n)'
 chart.y_axis.title = 'Excution Time (microseconds)'
 chart.scatterStyle = 'marker'
-x_axis = Reference(ws, min_col=2, max_col=4, min_row=1, max_row=501)
+x_axis = Reference(ws, min_col=1, max_col=1, min_row=1, max_row=501)
 for i, name in enumerate(["Bubble Sort", "Insertion Sort", "Selection Sort"], start = 2):
     y_axis = Reference(ws, min_col=i, min_row=2, max_row=501)
     series = Series(y_axis, x_axis, title = name)
