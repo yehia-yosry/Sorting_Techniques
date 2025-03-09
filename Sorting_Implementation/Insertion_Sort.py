@@ -1,5 +1,7 @@
 import time
-def insertion_sort(arr):
+
+
+def Insertion_Sort(arr):
     start = time.perf_counter()
     for i in range(1, len(arr), 1):
         value = arr[i]

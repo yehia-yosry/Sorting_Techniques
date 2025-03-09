@@ -1,5 +1,7 @@
 import time
-def selection_sort(arr):
+
+
+def Selection_Sort(arr):
     start = time.perf_counter()
     for i in range(0, len(arr)):
         min_index = i

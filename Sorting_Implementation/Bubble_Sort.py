@@ -1,5 +1,7 @@
 import time
-def bubble_sort(arr):
+
+
+def Bubble_Sort(arr):
     start = time.perf_counter()
     for i in range(0, len(arr)):
         is_sorted = True
@@ -11,3 +13,4 @@ def bubble_sort(arr):
             break
     end = time.perf_counter()
     return arr, end - start
+
