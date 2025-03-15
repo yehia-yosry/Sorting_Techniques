@@ -1,3 +1,5 @@
+import time
+
 def merge_sort(arr):
     copy = arr[:]
     if len(copy) < 2:
@@ -18,3 +20,10 @@ def merge(left_arr, right_arr):
     sorted_array.extend(left_arr)
     sorted_array.extend(right_arr)
     return sorted_array
+
+
+def merge_with_time(arr):
+    start = time.perf_counter()
+    merge_sort(arr)
+    end = time.perf_counter()
+    return arr, end - start

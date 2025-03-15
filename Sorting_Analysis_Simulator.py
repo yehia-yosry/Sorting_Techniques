@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 from Sorting_Implementation.Bubble_Sort import Bubble_Sort as BS
 from Sorting_Implementation.Insertion_Sort import Insertion_Sort as IS
 from Sorting_Implementation.Selection_Sort import Selection_Sort as SS
+from Sorting_Implementation.Merge_Sort import merge_with_time as MS
+from Sorting_Implementation.Quicksort import timedQuickSort as QS
 
 # Generating Random Array Based On Needed Length
 
@@ -33,6 +35,7 @@ result = IS(arr)
 print("Insertion Sort =>", result[0])
 result = SS(arr)
 print("Selection Sort =>", result[0])
+
 
 print("\nTime Taken By Bubble Sort: ", result[1])
 print("Time Taken By Insertion Sort:  ", result[1])

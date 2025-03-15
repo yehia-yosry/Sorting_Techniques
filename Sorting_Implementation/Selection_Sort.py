@@ -2,12 +2,13 @@ import time
 
 
 def Selection_Sort(arr):
+    copy = arr[:]
     start = time.perf_counter()
-    for i in range(0, len(arr)):
+    for i in range(0, len(copy)):
         min_index = i
-        for j in range(i+1, len(arr)):
-            if arr[j] < arr[min_index]:
+        for j in range(i+1, len(copy)):
+            if copy[j] < copy[min_index]:
                 min_index = j
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+        copy[i], copy[min_index] = copy[min_index], copy[i]
     end = time.perf_counter()
-    return arr, end - start
+    return copy, end - start
