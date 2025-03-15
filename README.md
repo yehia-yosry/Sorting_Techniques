@@ -5,7 +5,6 @@ Using pandas and openpyxl, the graph was displayed on an Excel sheet.
 Random number generating function was used as an input for unsorted arrays.
 
 
-![complexity_graph](https://github.com/user-attachments/assets/fef30521-5dca-43cd-85ef-d18ee49affc6)
-![AlgorithmRuntime](https://github.com/user-attachments/assets/7e875ff2-c862-433c-a976-703545ef4da8)
-
+<img width="640" alt="complexity_graph" src="https://github.com/user-attachments/assets/5691ba09-bbfd-4977-8074-c746d263fd18" />
+![runtime](https://github.com/user-attachments/assets/687f0986-2d26-46a5-800b-3d9b213ab047)
 
