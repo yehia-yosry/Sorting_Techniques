@@ -14,13 +14,11 @@ def partition(array, low, high):
     array[leftwall-1], array[low] = array[low], array[leftwall-1]
     return leftwall-1
 
-def quickSort(arr, l, h, count = True):
-    passes = 0
-    if(l<h and passes<count):
+def quickSort(arr, l, h):
+    if(l<h):
         j = partition(arr, l, h)
         quickSort(arr, l, j-1)
         quickSort(arr, j+1, h)
-        passes += 1
 
 def timedQuickSort(arr):
     start = time.perf_counter()
@@ -28,6 +26,13 @@ def timedQuickSort(arr):
     end = time.perf_counter()
     return arr, end - start
 
-def kthElement(arr, k):
-    quickSort(arr, 0, len(arr)-1, k)
-    return arr[k-1]
+def kthElement(arr, k, low, high):
+    if(low<=high):
+        index = partition(arr, low, high)
+        if(index == k-1):
+            return arr[index]
+        elif (index > k-1):
+            return kthElement(arr, k, low, index-1)
+        else:
+            return kthElement(arr, k, index+1, high)
+

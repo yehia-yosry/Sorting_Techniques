@@ -21,9 +21,10 @@ def merge(left_arr, right_arr):
     sorted_array.extend(right_arr)
     return sorted_array
 
-
-def merge_with_time(arr):
+def timedMergeSort(arr):
     start = time.perf_counter()
-    merge_sort(arr)
+    arr = merge_sort(arr)
     end = time.perf_counter()
     return arr, end - start
+
+print(timedMergeSort([3,41,16,25,63,52,40]))

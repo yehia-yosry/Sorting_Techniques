@@ -2,17 +2,16 @@ import time
 
 
 def Insertion_Sort(arr):
-    copy = arr[:]
     start = time.perf_counter()
-    for i in range(1, len(copy), 1):
-        value = copy[i]
+    for i in range(1, len(arr), 1):
+        value = arr[i]
         pos = i
         for j in range(i-1, -1, -1):
-            if copy[j] > value:
-                copy[j+1] = copy[j]
+            if arr[j] > value:
+                arr[j+1] = arr[j]
                 pos = j
             else:
                 break
-        copy[pos] = value
+        arr[pos] = value
     end = time.perf_counter()
-    return copy, end - start
+    return arr, end - start

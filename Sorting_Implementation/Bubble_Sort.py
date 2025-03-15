@@ -2,15 +2,15 @@ import time
 
 
 def Bubble_Sort(arr):
-    copy = arr[:]
     start = time.perf_counter()
-    for i in range(0, len(copy)):
+    for i in range(0, len(arr)):
         is_sorted = True
-        for j in range(0, len(copy) - 1 - i):
-            if (copy[j] > copy[j+1]):
+        for j in range(0, len(arr) - 1 - i):
+            if (arr[j] > arr[j+1]):
                 is_sorted = False
-                copy[j], copy[j+1] = copy[j+1], copy[j]
+                arr[j], arr[j+1] = arr[j+1], arr[j]
         if is_sorted == True:
             break
     end = time.perf_counter()
-    return copy, end - start
+    return arr, end - start
+

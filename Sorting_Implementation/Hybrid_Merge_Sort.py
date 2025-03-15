@@ -1,10 +1,9 @@
-import Insertion_Sort as IS
-
+from Sorting_Implementation.Insertion_Sort import Insertion_Sort as IS
 
 def merge_sort(arr, THRESHOLD):
     copy = arr[:]
     if len(copy) <= THRESHOLD:
-        return IS.Insertion_Sort(copy)[0]
+        return IS(copy)[0]
     mid = len(copy) // 2
     left_arr = copy[0:mid]
     right_arr = copy[mid: len(copy)]
